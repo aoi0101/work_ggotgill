@@ -1,0 +1,453 @@
+$top-contents__backgroundColor: #fffaec;
+$top-contents__subColor: #7296b4;
+$top-contents__textColor: #695631;
+$top-contents__buttonColor: #ffffff;
+$top-contents__titleText--color: #ffffff;
+
+$pc: 1180px;
+$tb: 1179px;
+$sp: 767px;
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media (max-width: ($tb)) and (min-width: 766px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-top__imageSection--wrap {
+  width: 100%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.p-top__image--section {
+  overflow: hidden;
+  position: relative;
+  @include pc {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  @include tb {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  @include sp {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+}
+
+.p-top__image--section__detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+}
+
+.p-top__image {
+  float: left;
+}
+
+.p-top__image--item {
+  @include pc {
+    width: 500px;
+    height: 500px;
+  }
+  @include tb {
+    width: 500px;
+    height: 500px;
+  }
+  @include sp {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.p-top__imageButton--wrap {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-top__imageButton--left {
+  background-color: $top-contents__subColor;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  @include sp {
+    display: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 17px;
+    transform: rotate(45deg);
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid #fff;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.p-top__imageButton--right {
+  background-color: $top-contents__subColor;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  @include sp {
+    display: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 11px;
+    transform: rotate(-45deg);
+    border-bottom: 6px solid #fff;
+    border-right: 6px solid #fff;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.p-top__contents--wrap {
+  width: 100%;
+  @include pc {
+    padding: 0 50px 50px 50px;
+  }
+  @include tb {
+    padding: 0 50px 50px 50px;
+  }
+  @include sp {
+    padding: 0;
+  }
+}
+
+.p-top__newItem--section {
+  background-color: $top-contents__backgroundColor;
+  margin-top: 50px;
+  @include pc {
+    padding: 50px;
+  }
+  @include tb {
+    padding: 50px;
+  }
+  @include sp {
+    padding: 20px 30px;
+  }
+}
+
+.c-title__section {
+  background-color: $top-contents__subColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include pc {
+    width: 27%;
+    padding: 15px;
+  }
+  @include tb {
+    width: 40%;
+    padding: 15px;
+  }
+  @include sp {
+    width: 50%;
+    padding: 13px;
+  }
+}
+
+.c-title__text {
+  color: $top-contents__titleText--color;
+  font-family: caflisch-script-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include pc {
+    font-size: 45px;
+  }
+  @include tb {
+    font-size: 45px;
+  }
+  @include sp {
+    font-size: 25px;
+  }
+}
+
+.c-top__itemSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  @include pc {
+    margin-bottom: 90px;
+    margin-top: 80px;
+  }
+  @include tb {
+    margin-bottom: 90px;
+    margin-top: 80px;
+  }
+  @include sp {
+    margin-bottom: 40px;
+    margin-top: 50px;
+  }
+}
+
+.c-top__item {
+  @include pc {
+    width: 25%;
+    margin-right: 60px;
+    margin-bottom: 70px;
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-bottom: 0;
+    }
+    &:nth-child(5) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  @include tb {
+    width: 40%;
+    margin-right: 75px;
+    margin-bottom: 75px;
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+    &:nth-child(5) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  @include sp {
+    width: 40%;
+    margin-right: 30px;
+    margin-bottom: 35px;
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+    &:nth-child(5) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.c-top__itemImage__section {
+  display: flex;
+  justify-content: center;
+  @include pc {
+    margin-bottom: 30px;
+  }
+  @include tb {
+    margin-bottom: 30px;
+  }
+  @include sp {
+    margin-bottom: 20px;
+  }
+}
+
+.c-top__itemName {
+  color: $top-contents__textColor;
+  font-family: caflisch-script-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include pc {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  @include tb {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  @include sp {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+}
+
+.c-top__itemPrice {
+  color: $top-contents__textColor;
+  display: flex;
+  justify-content: flex-end;
+  font-family: caflisch-script-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include pc {
+    font-size: 30px;
+  }
+  @include tb {
+    font-size: 30px;
+  }
+  @include sp {
+    font-size: 20px;
+  }
+}
+
+.c-moreButton__section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.c-moreButton {
+  border: 1px solid $top-contents__subColor;
+  background-color: $top-contents__buttonColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include pc {
+    width: 130px;
+    padding: 10px;
+  }
+  @include tb {
+    width: 130px;
+    padding: 10px;
+  }
+  @include sp {
+    width: 70px;
+    padding: 7px;
+  }
+}
+
+.c-moreButton__text {
+  color: $top-contents__subColor;
+  font-family: caflisch-script-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include pc {
+    font-size: 35px;
+  }
+  @include tb {
+    font-size: 35px;
+  }
+  @include sp {
+    font-size: 23px;
+  }
+}
+
+.p-top__ownersPick--section {
+  background-color: $top-contents__backgroundColor;
+  @include pc {
+    margin-top: 100px;
+    padding: 50px;
+  }
+  @include tb {
+    margin-top: 100px;
+    padding: 50px;
+  }
+  @include sp {
+    margin-top: 50px;
+    padding: 20px 30px;
+  }
+}
+
+.p-top__news--section {
+  width: 100%;
+  background-color: $top-contents__backgroundColor;
+  @include pc {
+    margin-top: 100px;
+    padding: 50px;
+  }
+  @include tb {
+    margin-top: 100px;
+    padding: 50px;
+  }
+  @include sp {
+    margin-top: 50px;
+    padding: 20px 30px;
+  }
+}
+
+.p-top__news--main {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  @include tb {
+    margin-top: 90px;
+  }
+}
+
+.p-top__news--image {
+  width: 250px;
+  @include pc {
+    margin-right: 200px;
+  }
+  @include tb {
+    margin-right: 80px;
+  }
+  @include sp {
+    margin-right: 30px;
+  }
+}
+
+.p-top__news--text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p-top__news--text {
+  color: $top-contents__textColor;
+  text-align: center;
+  font-family: caflisch-script-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include pc {
+    font-size: 40px;
+    margin-bottom: 130px;
+  }
+  @include tb {
+    font-size: 40px;
+    margin-bottom: 55px;
+  }
+  @include sp {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+}
